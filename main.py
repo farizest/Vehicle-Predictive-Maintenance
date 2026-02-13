@@ -59,7 +59,7 @@ def train_pipeline():
 
 def main():
     parser = argparse.ArgumentParser(description="Vehicle PDM Pipeline Manager")
-    parser.add_argument("--mode", type=str, choices=["train", "app", "all"], default="all",
+    parser.add_argument("--mode", type=str, choices=["train", "app", "all"], default="app",
                         help="Mode: 'train' (only training), 'app' (only web app), 'all' (train + app)")
     
     args = parser.parse_args()
