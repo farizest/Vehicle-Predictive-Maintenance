@@ -7,5 +7,4 @@ kagglehub
 streamlit>=1.36.0
 google-generativeai>=0.5.0
 python-dotenv
-protobuf>=3.20.3,<4.0.0
 python-dotenv
