@@ -262,7 +262,7 @@ try:
             try:
                 genai.configure(api_key=GEMINI_KEY)
                 # Use gemini-1.5-flash for stability
-                chat_model = genai.GenerativeModel('gemini-1.5-flash')
+                chat_model = genai.GenerativeModel('gemini-2.5-flash')
             
                 if "messages" not in st.session_state:
                     st.session_state.messages = []
