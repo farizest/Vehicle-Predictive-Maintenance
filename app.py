@@ -66,7 +66,7 @@ load_dotenv()
 
 try:
     # Get Gemini Key from environment
-    GEMINI_KEY = "AIzaSyCfohYeog1W4xGLubTcg9LMAFLuiUma7FQ"
+    GEMINI_KEY = "AIzaSyBMrpPVFAI2vsER3MlxGPIh2v1pr8bqeQw"
     
     model, scaler, test_df = load_assets()
     
