@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{{ title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css"/>
+</head>
+<body>
+  <div class="wrap">
+    <div class="row space header-row">
+      <div>
+        <div class="h1">AutoDoc: AI Mechanic</div>
+        <div class="sub">Live Telemetry & Diagnostics Dashboard</div>
+      </div>
+      <div class="nav-links">
+        <button class="primary glow" id="runRandom">Run Random Test</button>
+        <button class="outline" id="openManualBtn">Manual Testing</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- Status Card -->
+      <div class="card fade-in">
+        <div class="row space">
+          <div>
+            <div class="small">Prediction</div>
+            <div class="metric"><div class="v" id="pred">—</div><div class="small">kms RUL</div></div>
+          </div>
+          <div class="pill" id="status">—</div>
+        </div>
+        <hr class="hr"/>
+        <div class="row info-row">
+          <div class="small" id="scenario">Waiting for test run...</div>
+        </div>
+      </div>
+
+      <!-- Diagnosis Card -->
+      <div class="card fade-in" style="animation-delay: 0.1s;">
+        <div class="cardTitle">AI Mechanic’s Diagnosis</div>
+        <div class="small">Powered by Gemini</div>
+        <div id="diag" class="diag">Run a prediction to generate a diagnosis.</div>
+      </div>
+
+      <!-- XAI Card -->
+      <div class="card fade-in" style="animation-delay: 0.2s;">
+        <div class="cardTitle">Detailed Sensor Analysis (XAI)</div>
+        <div class="small">Identifies the components contributing most to the failure risk.</div>
+        <div class="tableWrap">
+          <table>
+            <thead><tr><th>Component</th><th>Value</th><th>Health impact</th></tr></thead>
+            <tbody id="xaiBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Chat Card -->
+      <div class="card fade-in" style="animation-delay: 0.3s;">
+        <div class="cardTitle">Ask AutoDoc Mechanic</div>
+        <div class="row">
+          <textarea id="q" rows="3" class="grow" placeholder="Ask about the repair..."></textarea>
+          <button id="ask">Ask</button>
+        </div>
+        <div id="chat" class="diag"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manual Testing Modal -->
+  <div id="manualModal" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <div class="row space modal-header">
+        <div class="h1" style="font-size: 22px;">Manual Testing</div>
+        <button class="icon-btn" id="closeModalBtn">&times;</button>
+      </div>
+      <div class="sub">Adjust simulated sensor values below to test specific scenarios.</div>
+      
+      <div class="toggle-container row">
+        <button class="toggle-btn active" id="toggleSlider">Slider</button>
+        <button class="toggle-btn" id="toggleNumber">Number Input</button>
+      </div>
+
+      <div id="sensorInputs" class="grid modal-grid"></div>
+
+      <div class="row action-row">
+        <button class="outline" id="cancelModalBtn">Cancel</button>
+        <button class="primary glow" id="runManual">Run Manual Diagnostics</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

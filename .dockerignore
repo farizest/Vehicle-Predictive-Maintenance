@@ -1,0 +1,23 @@
+# Virtual Environments
+venv/
+env/
+.env
+
+# Git
+.git/
+.gitignore
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Logs
+*.log
+
+# Jupyter Notebooks (if any)
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
